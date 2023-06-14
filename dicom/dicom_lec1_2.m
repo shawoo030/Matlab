@@ -37,7 +37,7 @@ WorkingFolder = 'C:\Users\cbs1009\Desktop\Chaerim\matlab\dicom';
 PatientDataFolder = 'C:\Users\cbs1009\Desktop\Chaerim\matlab\dicom\data\patient-example';
 
 % get CT folder from patient folder
-folders = dir(sprintf('%s\\', PatientDataFolder));  % \\ÀÌ¸é Ãâ·ÂÇÒ ¶§´Â ¸¶Áö¸·¿¡ \ÇÏ³ª¸¸ Ãß°¡µÊ.
+folders = dir(sprintf('%s\\', PatientDataFolder));  % \\ì´ë©´ ì¶œë ¥í•  ë•ŒëŠ” ë§ˆì§€ë§‰ì— \í•˜ë‚˜ë§Œ ì¶”ê°€ë¨.
 
 for ff = 1:size(folders,1)
     if contains(folders(ff).name,'CT')
@@ -55,7 +55,7 @@ for fs = 1: size(files,1)
         info = dicominfo(filename);
         SliceLocation = info.SliceLocation;
         
-        fprintf('Slice location = %.1f\n', SliceLocation) % superior³Ä imperial ÀÌ³Ä¿¡ ´ëÇÑ Á¤º¸.
+        fprintf('Slice location = %.1f\n', SliceLocation) % superiorëƒ imperial ì´ëƒì— ëŒ€í•œ ì •ë³´.
 end
 
 
