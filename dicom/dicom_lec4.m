@@ -6,12 +6,12 @@
 
 % -----------------2. Window width / window level-------------------
 %        Lower limit = Level - (1/2)* Window , Upper limit = Level + (1/2)*Window
-%       clim() or caxis()·Î ¹üÀ§ ¼³Á¤ °¡´É. ´ëÁ¶µµ¸¦ ³ôÀÌ±â À§ÇØ¼­´Â window width¸¦ ³·Ãç¾ß ÇÑ´Ù.
+%       clim() or caxis()ë¡œ ë²”ìœ„ ì„¤ì • ê°€ëŠ¥. ëŒ€ì¡°ë„ë¥¼ ë†’ì´ê¸° ìœ„í•´ì„œëŠ” window widthë¥¼ ë‚®ì¶°ì•¼ í•œë‹¤.
 
 
-%---------------------- 3. CT volumeÀ¸·Î ÀĞ±â -----------------------------
+%---------------------- 3. CT volumeìœ¼ë¡œ ì½ê¸° -----------------------------
         % dicomreadVolume()
-        % squeeze () : dicomereadVolume()À¸·Î ÀÌ¹ÌÁö¸¦ ¹ŞÀ¸¸é 4D·Î ¾ò¾îÁö°Ô µÊ. ºÒÇÊ¿äÇÑ volumeÀ» ÁÙ¿©ÁÙ ¼ö ÀÖÀ½
+        % squeeze () : dicomereadVolume()ìœ¼ë¡œ ì´ë¯¸ì§€ë¥¼ ë°›ìœ¼ë©´ 4Dë¡œ ì–»ì–´ì§€ê²Œ ë¨. ë¶ˆí•„ìš”í•œ volumeì„ ì¤„ì—¬ì¤„ ìˆ˜ ìˆìŒ
 
 clear all; close all; clc;
 
@@ -38,7 +38,7 @@ image = squeeze(image);
 % get origin spacing size
 image_origin = spatial.PatientPositions(1,:);
 image_spacing = spatial.PixelSpacings(1,:);
-image_spacing(3) = spatial.PatientPositions(2,3) - spatial.PatientPositions(1,3); % zÃàÁÂÇ¥¸¦ ¾ò°í ½ÍÀ» ¶§
+image_spacing(3) = spatial.PatientPositions(2,3) - spatial.PatientPositions(1,3); % zì¶•ì¢Œí‘œë¥¼ ì–»ê³  ì‹¶ì„ ë•Œ
 image_size = size(image); % or image_size = spatial.ImgaeSize
 
 
@@ -70,7 +70,7 @@ type AxisRange.txt
 % or
 C = {'x',min(x),max(x), ;'y',min(y),max(y),;'z', min(z),max(z)};
 
-fileID = fopen('AxisRange.txt2','w');
+fileID = fopen('HW4.txt','w');
 formatSpec = '%s %2.1f %2.1f \n';
 [nrows,ncols] = size(C);
 for row = 1:nrows
@@ -78,4 +78,4 @@ for row = 1:nrows
 end
 fclose(fileID);
 
-type AxisRange.txt2
+type HW4.txt
